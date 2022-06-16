@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items Details Page</title>
+</head>
+<body>
+    <a href="/items">Go Back</a>
+    <h1>Items detail page</h1>
+    <h2>Item: <%=item.name %> </h2>
+    <h2>Price: <%=item.price%></h2>
+    <h2>Quantity: <%=item.quantity%></h2>
+    <h2>Description: <%=item.description%></h2>
+
+    <form method="POST" action="/items/<%= item._id %>?_method=PATCH">
+        <!-- <form method="POST" action="/cats/<%= item._id %>"> -->
+            Name: <input name="name" type="text">
+            Price: <input name="price" type="text">
+            Description: <input name="description" type="text">
+            Quantity: <input name="quantity" type="number">
+            <input type="submit" value="Edit Item">
+        </form>
+    
+        <form method="POST" action="/items/<%= item._id %>?_method=DELETE">
+            <input type="submit" value="Delete Item">
+        </form>
+
+</html>
