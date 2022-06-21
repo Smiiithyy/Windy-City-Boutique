@@ -6,12 +6,12 @@
     <title>Item List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
-  <body>
+  <body class = "bg-light">
 
 <!--Nav Bar-->
-<nav class="navbar" style="background-color: #b3dbf7;">
+<nav class="navbar text-white" style="background-color: #8d90f3;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Windy City Boutique</a>
+    <a class="navbar-brand font-italic" href="#">Windy City Boutique</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -42,7 +42,7 @@
 </nav>
 <!---->
 
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+<div class="d-grid gap-2 d-md-flex justify-content-md-end m-3">
   <button class="btn btn-outline-primary" type="button">     
     <% if (user) { %>
     <a href="/logout">Log Out</a>
@@ -54,7 +54,7 @@
 <div class ="d-flex justify-content-sm-around flex-wrap">
 <% allItems.forEach((el) => { %>
   <figure class="figure">
-    <img src="<%=el.image%>" class ="img-thumbnail mx-auto d-block border border-dark" alt="<%=el.name%>">
+    <img src="<%=el.image%>" class ="h-100 w-100 d-block img-thumbnail border border-secondary" alt="<%=el.name%>">
   <figcaption class= "figure-caption text-center"><a href="/items/<%=el._id%>"><%=el.name%> - $<%=el.price%></a>
 </figcaption>
 
@@ -65,9 +65,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
-    <nav class="navbar fixed-bottom" style="background-color: #b3dbf7;">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Copywrite 2022</a>
+    <nav class="navbar fixed-bottom" style="background-color: #8d90f3;">
+      <div class="container-fluid ">
+        <a class="navbar-brand" href="#"></a>
       </div>
     </nav>
   </body>
