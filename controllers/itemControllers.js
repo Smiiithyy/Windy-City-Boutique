@@ -22,6 +22,7 @@ function showDetail(req, res) {
     Item.findById(req.params.itemId).then((item) => {
         console.log(item)
         res.render('itemDetails', {item})
+        
     })
 }
 

@@ -1,30 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Items Details Page</title>
-</head>
-<body>
-    <a href="/items">Go Back</a>
-    <h1>Items detail page</h1>
-    <h2>Item: <%=item.name %> </h2>
-    <h2>Price: <%=item.price%></h2>
-    <h2>Quantity: <%=item.quantity%></h2>
-    <h2>Description: <%=item.description%></h2>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Item Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+<div>
+    <nav class="navbar" style="background-color: #a4d6f7;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/items">Windy City Boutique</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/items">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/items/new">Add a New Item</a>
+              </li>
+
+      
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+</div>
+    <button type="button" class="btn btn-dark m-3"><a href="/items" style="text-decoration: none; color: white;">Go Back</a></button>
+    
+    <h1 class="text-center text-decoration-underline"><%=item.name%></h1>
+    <img src= <%=item.image %> class="rounded mx-auto d-block" alt="<%=item.name%>">
+    <h4 class="m-2">Price: $<%=item.price%></h4>
+    <h5 class="m-2">Quantity: <%=item.quantity%></h5>
+    <p class="m-2">Description: <%=item.description%></p>
 
     <form method="POST" action="/items/<%= item._id %>?_method=PATCH">
         <!-- <form method="POST" action="/cats/<%= item._id %>"> -->
-            Name: <input name="name" type="text">
-            Price: <input name="price" type="text">
-            Description: <input name="description" type="text">
-            Quantity: <input name="quantity" type="number">
-            <input type="submit" value="Edit Item">
+        <div class ="row">
+            <div class="col">
+            <p class="m-3">Name:</p><input name="name" class="form-control m-3" type="text">
+            <p class="m-3">Price:</p> <input name="price" class= "form-control m-3" type="text">
+            </div>
+            <div class="col">
+            <p class="m-3">Quantity:</p><input name="quantity" class = "form-control m-3" type="number">
+            <p class="m-3">Image:</p> <input name="image" class = "form-control m-3" type="text"> 
+            </div>
+        </div>
+        <p class="m-3">Description: </p> <input name="description" class="form-control m-3" type="text">         
+        <input class= "btn btn-primary mb-2 m-3" type="submit" value="Edit Item">
         </form>
-    
+    <div class="-grid gap-2 d-md-flex justify-content-md-end">
         <form method="POST" action="/items/<%= item._id %>?_method=DELETE">
-            <input type="submit" value="Delete Item">
+            <input class = "btn btn-danger m-3" type="submit" value="Delete Item">
         </form>
-
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
 </html>
